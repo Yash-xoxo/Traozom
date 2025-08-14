@@ -26,32 +26,25 @@ import { AnimatedLogo } from "@/components/animated-logo"
 
 const teamMembers = [
   {
-    name: "Arjun Patel",
-    role: "Founder & CEO",
+    name: "Neelakshi Kaundal",
+    role: "CEO",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    bio: "Former Google AI engineer with a passion for authentic travel experiences across India.",
-    expertise: "AI & Machine Learning",
+    bio: "Visionary leader with a passion for authentic travel experiences across India.",
+    expertise: "Leadership & Strategy",
   },
   {
-    name: "Priya Sharma",
-    role: "Head of Cultural Experiences",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-    bio: "Cultural anthropologist and travel writer who has explored every corner of India for 15 years.",
-    expertise: "Cultural Immersion",
-  },
-  {
-    name: "Rajesh Kumar",
-    role: "Chief Technology Officer",
+    name: "Yash Gupta",
+    role: "CTO",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-    bio: "Tech innovator specializing in personalized recommendation systems and travel technology.",
+    bio: "Tech innovator specializing in AI-powered travel solutions and personalized recommendation systems.",
     expertise: "Travel Technology",
   },
   {
-    name: "Meera Gupta",
-    role: "Director of Local Partnerships",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-    bio: "Network builder with connections to authentic local guides and hidden gems across India.",
-    expertise: "Local Partnerships",
+    name: "Devensh Sain",
+    role: "CMO",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+    bio: "Marketing strategist passionate about connecting travelers with authentic Indian experiences.",
+    expertise: "Digital Marketing",
   },
 ]
 
@@ -317,7 +310,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}

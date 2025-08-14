@@ -17,42 +17,57 @@ import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore"
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB9v8_WW_5SimKKn3Do8SrdRREmGEjJe-E",
-  authDomain: "travozom.firebaseapp.com",
-  projectId: "travozom",
-  storageBucket: "travozom.firebasestorage.app",
-  messagingSenderId: "712470564689",
-  appId: "1:712470564689:web:4737824be45ba98038cd70",
-  measurementId: "G-ZBJNPJL08E",
-}
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+};
 
 // Initialize Firebase with proper error handling
-let app: any = null
-let auth: any = null
-let db: any = null
-let googleProvider: any = null
+let app: any = null;
+let auth: any = null;
+let db: any = null;
+let googleProvider: any = null;
 
 const initializeFirebase = () => {
   try {
-    if (typeof window !== "undefined") {
-      app = initializeApp(firebaseConfig)
-      auth = getAuth(app)
-      db = getFirestore(app)
-      googleProvider = new GoogleAuthProvider()
-      console.log("Firebase initialized successfully")
+    // Check if all required Firebase config keys are present
+    const requiredKeys = [
+      "apiKey",
+      "authDomain",
+      "projectId",
+      "storageBucket",
+      "messagingSenderId",
+      "appId",
+    ];
+    const allKeysPresent = requiredKeys.every(
+      (key) => firebaseConfig[key as keyof typeof firebaseConfig]
+    );
+
+    if (typeof window !== "undefined" && allKeysPresent) {
+      app = initializeApp(firebaseConfig);
+      auth = getAuth(app);
+      db = getFirestore(app);
+      googleProvider = new GoogleAuthProvider();
+      console.log("Firebase initialized successfully");
+    } else if (!allKeysPresent) {
+      console.warn("Firebase configuration is incomplete. Firebase is not initialized.");
     }
   } catch (error) {
-    console.warn("Firebase initialization failed, using fallback mode:", error)
+    console.warn("Firebase initialization failed, using fallback mode:", error);
     // Set to null to indicate Firebase is not available
-    app = null
-    auth = null
-    db = null
-    googleProvider = null
+    app = null;
+    auth = null;
+    db = null;
+    googleProvider = null;
   }
-}
+};
 
 // Initialize Firebase
-initializeFirebase()
+initializeFirebase();
 
 interface User {
   id: string

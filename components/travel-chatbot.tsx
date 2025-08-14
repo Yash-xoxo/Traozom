@@ -31,7 +31,7 @@ export function TravelChatbot() {
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   // Initialize Gemini API
-  const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY || "AIzaSyAbcoiYJ6fL4JAxKSySS2-PpMO-OgYgbSE")
+  const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY || "")
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
   // Scroll to bottom of messages

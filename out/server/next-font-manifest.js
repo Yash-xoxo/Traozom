@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{},\"appUsingSizeAdjust\":false,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/yashxoxo/Yash/Git/Traozom/app/layout\":[\"static/media/e4af272ccee01ff0-s.p.woff2\",\"static/media/155cae559bbd1a77-s.p.woff2\",\"static/media/4de1fea1a954a5b6-s.p.woff2\",\"static/media/6d664cce900333ee-s.p.woff2\",\"static/media/6af6b543dd3be231-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

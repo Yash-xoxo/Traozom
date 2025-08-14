@@ -1105,7 +1105,7 @@ function RenderHomePage() {
             >
               <X className="w-6 h-6 text-traozom-forest dark:text-traozom-cream" />
             </button>
-
+            
             {/* Central City Image */}
             <motion.div
               className="absolute z-20 w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-traozom-orange"
@@ -1125,7 +1125,7 @@ function RenderHomePage() {
                 <p className="text-traozom-sage text-sm">{selectedCity.tagline}</p>
               </div>
             </motion.div>
-
+            
             {/* Circular Sub-Places */}
             <div className="relative w-full h-full flex items-center justify-center">
               {selectedCity.subPlaces?.map((place: any, index: number) => {
@@ -1178,7 +1178,7 @@ function RenderHomePage() {
                         </div>
                       </CardContent>
                     </Card>
-
+                    
                     {/* Connection Lines */}
                     <motion.div
                       className="absolute w-1 bg-gradient-to-r from-traozom-forest to-traozom-orange opacity-30"
@@ -1197,7 +1197,7 @@ function RenderHomePage() {
                 )
               })}
             </div>
-
+            
             {/* Floating Action Buttons */}
             <motion.div
               className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4"
@@ -1220,7 +1220,7 @@ function RenderHomePage() {
                 Premium Experience
               </Button>
             </motion.div>
-
+            
             {/* Individual Firework Effects */}
             {fireworks.map((firework) => (
               <div
@@ -1261,6 +1261,9 @@ function RenderHomePage() {
           </motion.div>
         </motion.div>
       )}
+      
+      {/* Travel Chatbot */}
+      <TravelChatbot />
     </div>
   )
 }
