@@ -16,6 +16,7 @@ import { Badge } from "@/components/ui/badge"
 import { MapPin, Sparkles, Users, Clock, Star, ArrowRight, Globe, Heart, X, Crown } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { TravelChatbot } from "@/components/travel-chatbot"
 
 // Define City type for selectedCity
 
